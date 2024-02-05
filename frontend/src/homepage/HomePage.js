@@ -1,7 +1,22 @@
-import React from 'react'
+import {
+  Hero,
+  BusSearch,
+  ViewTicket,
+  ContactUs,
+  AboutUs,
+  PlacesTour,
+} from "../components/sections";
 
-export default function HomePage() {
+function HomePage() {
   return (
-    <div className='bg-red-500'>HomePage</div>
-  )
+    <div>
+      <Hero />
+      <BusSearch />
+      <ViewTicket />
+      <AboutUs />
+      <ContactUs />
+    </div>
+  );
 }
+
+export default HomePage;
