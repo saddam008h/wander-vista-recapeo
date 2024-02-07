@@ -6,16 +6,16 @@ const categorySchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  description: {
+  email:
+  {
     type: String,
-    required: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
+  age:{
+    type: Number,
   },
+
 });
 
-const Category = mongoose.model('Category', categorySchema);
+const Category = mongoose.model('bu', categorySchema);
 
 module.exports = Category;
