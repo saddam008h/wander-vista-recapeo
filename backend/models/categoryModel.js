@@ -3,16 +3,28 @@ const mongoose = require('mongoose');
 const categorySchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-    unique: true,
   },
-  email:
+  
+  destCity:
   {
     type: String,
   },
-  age:{
-    type: Number,
+  departCity:{
+    type: String,
   },
+  departDate:{
+    type: String,
+  },
+  departTime:{
+    type: String,
+  },
+  arrivDate:{
+    type: String,
+  },
+  arrivTime:{
+    type: String,
+  },
+
 
 });
 

@@ -3,8 +3,9 @@ const Category = require('../models/categoryModel');
 // Controller to create a new category
 module.exports.createCategory = async (req, res) => {
   try {
-    const { name, description } = req.body;
-    const newCategory = new Category({ name, description });
+    console.log(req.body);
+    const { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime } = req.body;
+    const newCategory = new Category({name, destCity, departCity, departDate, departTime, arrivDate, arrivTime} );
     const savedCategory = await newCategory.save();
     res.status(201).json(savedCategory);
   } catch (error) {
@@ -17,7 +18,7 @@ module.exports.getAllCategories = async (req, res) => {
   try {
     const categories = await Category.find();
     res.status(200).json(categories);
-    
+
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -41,10 +42,11 @@ module.exports.getCategoryById = async (req, res) => {
 module.exports.updateCategory = async (req, res) => {
   try {
     const categoryId = req.params.id;
-    const { name, description } = req.body;
+    const { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime } = req.body;
+
     const updatedCategory = await Category.findByIdAndUpdate(
       categoryId,
-      { name, description },
+      {name, destCity, departCity, departDate, departTime, arrivDate, arrivTime},
       { new: true }
     );
     if (!updatedCategory) {

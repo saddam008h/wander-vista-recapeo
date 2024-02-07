@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT;
 
 // Middleware
-app.use(cors()); // Enable CORS for all routes
+app.use(express.json()); // Enable CORS for all routes
 app.use(bodyParser.json());
 
 // Test endpoint
