@@ -11,6 +11,7 @@ function HomePage() {
   return (
     <div>
       <Hero />
+      <PlacesTour />
       <BusSearch />
       <ViewTicket />
       <AboutUs />

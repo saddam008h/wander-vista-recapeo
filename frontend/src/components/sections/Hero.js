@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div
       id="home"
-      className="h-[100vh]  mt-0 bg-[url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center w-full "
+      className="h-[100vh]  mt-0 bg-[url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover md:bg-center md:bg-fixed w-full "
     >
       <div className="w-full ">
         {" "}
@@ -14,7 +14,7 @@ export default function Hero() {
             <p className="text-3xl mb-2 font-bold md:text-5xl md:font-bold text-center">
               Journey With Purpose, Explore With Passion.
             </p>
-            <p className="text-2xl font-bold pt-4 md:font-normal md:text-3xl text-center w-full">
+            <p className="text-2xl font-bold pt-4 md:text-black text-white md:font-normal md:text-3xl text-center w-full">
               Your Travel Adventure Starts Here.
             </p>
           </div>{" "}

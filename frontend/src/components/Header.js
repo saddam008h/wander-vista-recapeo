@@ -140,10 +140,59 @@ function Header() {
               Home
             </Link>
           </li>
-          <li className="border-b p-2">Bus Search</li>
-          <li className="border-b p-2">View Ticket</li>
-          <li className="border-b p-2">About Us</li>
-          <li className=" p-2">Contact Us</li>
+          <li className="border-b p-2">
+            {" "}
+            <Link
+              activeClass="active"
+              to="bus-search"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={600}
+              className="pt-2"
+            >
+              Bus Search
+            </Link>{" "}
+          </li>
+          <li className="border-b p-2">
+            {" "}
+            <Link
+              activeClass="active"
+              to="view-ticket"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={600}
+            >
+              View Ticket
+            </Link>
+          </li>
+          <li className="border-b p-2">
+            {" "}
+            <Link
+              activeClass="active"
+              to="about-us"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={600}
+            >
+              About Us
+            </Link>
+          </li>
+          <li className=" p-2">
+            {" "}
+            <Link
+              activeClass="active"
+              to="contact-us"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={600}
+            >
+              Contact Us
+            </Link>
+          </li>
           <div className="flex flex-col">
             <button className="pt-2 mt-4 rounded-full bg-primary px-8 py-2 text-md font-normal text-black shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               Search

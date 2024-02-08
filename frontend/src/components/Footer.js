@@ -3,8 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div className="m-auto">
-      hii
-      <h2>wander vista</h2>
+      <h2>wander vista Footer</h2>
     </div>
   );
 }
