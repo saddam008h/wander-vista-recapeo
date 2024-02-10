@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const categorySchema = new mongoose.Schema({
+const busSchema = new mongoose.Schema({
   name: {
     type: String,
   },
@@ -24,10 +24,8 @@ const categorySchema = new mongoose.Schema({
   arrivTime:{
     type: String,
   },
-
-
 });
 
-const Category = mongoose.model('bu', categorySchema);
+const Bus = mongoose.model('Bus', busSchema);
 
-module.exports = Category;
+module.exports = Bus;

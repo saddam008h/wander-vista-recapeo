@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const categoryRoutes = require('./routes/categoryRoutes');
+const busRoutes = require('./routes/busRoutes');
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -30,7 +30,7 @@ db.once('open', () => {
 });
 
 // Routes
-app.use('/api/category', categoryRoutes);
+app.use('/api/buses', busRoutes);
 
 // Start the server
 app.listen(port, () => {
