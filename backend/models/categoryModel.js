@@ -3,19 +3,31 @@ const mongoose = require('mongoose');
 const categorySchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-    unique: true,
   },
-  description: {
+  
+  destCity:
+  {
     type: String,
-    required: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
+  departCity:{
+    type: String,
   },
+  departDate:{
+    type: String,
+  },
+  departTime:{
+    type: String,
+  },
+  arrivDate:{
+    type: String,
+  },
+  arrivTime:{
+    type: String,
+  },
+
+
 });
 
-const Category = mongoose.model('Category', categorySchema);
+const Category = mongoose.model('bu', categorySchema);
 
 module.exports = Category;
