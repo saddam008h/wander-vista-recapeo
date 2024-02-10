@@ -24,6 +24,9 @@ const busSchema = new mongoose.Schema({
   arrivTime:{
     type: String,
   },
+  price:{
+    type: Number,
+  }
 });
 
 const Bus = mongoose.model('Bus', busSchema);

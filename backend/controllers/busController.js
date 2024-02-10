@@ -4,8 +4,8 @@ const Bus = require('../models/busModel');
 module.exports.createBus = async (req, res) => {
   try {
     console.log(req.body);
-    const { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime } = req.body;
-    const newBus = new Bus({ name, destCity, departCity, departDate, departTime, arrivDate, arrivTime });
+    const { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime,price } = req.body;
+    const newBus = new Bus({ name, destCity, departCity, departDate, departTime, arrivDate, arrivTime,price });
     const savedBus = await newBus.save();
     res.status(201).json(savedBus);
   } catch (error) {
@@ -42,11 +42,11 @@ module.exports.getBusById = async (req, res) => {
 module.exports.updateBus = async (req, res) => {
   try {
     const busId = req.params.id;
-    const { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime } = req.body;
+    const { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime,price } = req.body;
 
     const updatedBus = await Bus.findByIdAndUpdate(
       busId,
-      { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime },
+      { name, destCity, departCity, departDate, departTime, arrivDate, arrivTime,price },
       { new: true }
     );
     if (!updatedBus) {
