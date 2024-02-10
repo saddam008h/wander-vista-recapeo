@@ -1,16 +1,23 @@
-import React from "react";
-import HomePage from "./homepage/HomePage";
+import AdminPanel from "./Pages/AdminPanel";
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import { Header } from "./components";
-import { Footer } from "./components";
+import { Footer } from "flowbite-react";
+import HomePage from "./homepage/HomePage";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <Header />
-      <HomePage />
-      <Footer />
-    </div>
+    <>
+        <BrowserRouter>
+        <Header/>
+        <Routes>
+          <Route path="/"  element={<HomePage />} />
+          <Route path="/AdminPanel"  element={<AdminPanel />} />
+
+        </Routes>
+        <Footer/>
+        </BrowserRouter>
+    </>
   );
-};
+}
 
 export default App;
