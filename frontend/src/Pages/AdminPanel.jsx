@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonGroup from '../Components/ButtonGroup'
+import ButtonGroup from '../components/ButtonGroup'
  
 
 
