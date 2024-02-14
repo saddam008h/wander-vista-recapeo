@@ -1,28 +1,21 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
-import axios from "axios";
 
 const BusSearch = () => {
-  const [fromlocation, setfromlocation] = useState("");
-  const [tolocation, settolocation] = useState("");
-  const [selectdate, setseletdate] = useState("");
-  const [selectprice, setslectedprice] = useState("");
-  const [searchresults, setsearchresults] = useState([]);
-
-  const handleSearch = async () => {
-    try {
-      // link
-      const response = await axios.get("apilink");
-      setsearchresults(response.data);
-    } catch (error) {
-      console.error("Error fetching search results", error);
-    }
-  };
-
-  useEffect(() => {}, [tolocation, selectdate, selectprice, searchresults]);
-
+  const [workouts, Setworkouts] = useState([]);
+  useEffect(() => {
+    const fetchWorkouts = async () => {
+      const response = await fetch("http://localhost:8000/api/buses");
+      const json = await response.json();
+      console.log("test");
+      if (response.ok) {
+        Setworkouts(json);
+      }
+    };
+    fetchWorkouts();
+  }, []);
   return (
-    <div className="h-[100vh] bg-slate-600 " id="bus-search">
+    <div className="h-[100vh] bg-blue-100 " id="bus-search">
       <div className="mt-60 w-full justify-center items-center">
         <div className="flex flex-col p-4">
           <h1 className="p-4 mt-[40px] font-bold text-3xl text-center">
@@ -53,9 +46,7 @@ const BusSearch = () => {
                 <input
                   type="text"
                   placeholder="From: Karachi"
-                  value={fromlocation}
                   className="bg-slate-300 outline-none border-none rounded-md"
-                  onChange={(e) => setfromlocation(e.target.value)}
                 />
               </label>
               <label className="mt-2 md:mt-0">
@@ -66,8 +57,6 @@ const BusSearch = () => {
                 <input
                   type="text"
                   placeholder="To: Lahore"
-                  value={tolocation}
-                  onChange={(e) => settolocation(e.target.value)}
                   className="bg-slate-300 outline-none border-none rounded-md"
                 />
               </label>
@@ -80,21 +69,19 @@ const BusSearch = () => {
                   name="price"
                   placeholder="Price"
                   min={300}
-                  value={selectprice}
-                  onChange={(e) => setslectedprice(e.target.value)}
                   className=" mb-4 md:mb-0 bg-slate-300 outline-none border-none rounded-md"
                 />
               </label>
               <input
                 type="date"
                 placeholder="Availability"
-                value={selectdate}
-                onChange={(e) => setseletdate(e.target.value)}
                 className="mt-2 mb-4 md:mb-0 md:mt-0 bg-slate-300 outline-none border-none rounded-md"
               />
               <button
                 className="mt-2 md:px-4 p-2 md:mt-0 rounded-full bg-primary text-lg font-normal text-white shadow-sm hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                onClick={handleSearch}
+                onClick={(e) => {
+                  search;
+                }}
               >
                 Search
               </button>
