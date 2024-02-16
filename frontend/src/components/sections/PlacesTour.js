@@ -9,7 +9,7 @@ function PlacesTour() {
         <h2 className="text-center p-2 my-3 md:text-3xl text-lg font-bold">
           Choose Your Next Tour
         </h2>
-        <div className="md:flex pb-2 mb-10 my-3 grid space-x-4 w-full justify-betweeni items-center space-y-2 grid-cols-2">
+        <div className="md:flex pb-2 mb-10 my-3 grid space-x-4 w-full justify-between items-center space-y-2 grid-cols-2">
           <TourCarouselCard
             placename="Naran Kagan"
             desc="Premium tour pakage"

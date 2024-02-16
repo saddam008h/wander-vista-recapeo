@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scrollSpy,
-} from "react-scroll/modules";
+import { Link, animateScroll as scrollSpy } from "react-scroll/modules";
 
 import { BsPerson } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
